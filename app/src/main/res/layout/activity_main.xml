@@ -37,7 +37,7 @@
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,5 +82,43 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cbSports" />
+
+    <TextView
+        android:id="@+id/tvRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/rate_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbMusic" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupRating"
+        android:layout_width="241dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvRating">
+
+        <RadioButton
+            android:id="@+id/rdGood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/good" />
+
+        <RadioButton
+            android:id="@+id/rdNormal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/normal" />
+
+        <RadioButton
+            android:id="@+id/rdBad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bad" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

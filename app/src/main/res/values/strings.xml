@@ -6,4 +6,8 @@
     <string name="reading">Чтение</string>
     <string name="sport">Спорт</string>
     <string name="music">Музыка</string>
+    <string name="good">Хорошо</string>
+    <string name="normal">Нормально</string>
+    <string name="bad">Плохо</string>
+    <string name="rate_app">Оцените приложение</string>
 </resources>
