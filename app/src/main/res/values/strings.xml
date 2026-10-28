@@ -2,4 +2,8 @@
     <string name="app_name">Day3_Tyurin_Usatenko</string>
     <string name="photo_description">A beautiful Fuchi Sunao</string>
     <string name="darkMode">Dark theme</string>
+    <string name="check_hobbits">Выберите ваши увлечения</string>
+    <string name="reading">Чтение</string>
+    <string name="sport">Спорт</string>
+    <string name="music">Музыка</string>
 </resources>
