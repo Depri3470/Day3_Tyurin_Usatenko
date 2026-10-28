@@ -3,6 +3,7 @@ package com.depri.day3_tyurin_usatenko
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.CheckBox
+import android.widget.RadioGroup
 import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -28,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         val cbSports = findViewById<CheckBox>(R.id.cbSports)
         val cbMusic = findViewById<CheckBox>(R.id.cbMusic)
         val userHobbies = findViewById<TextView>(R.id.userHobbies)
+        val radioGroupRating = findViewById<RadioGroup>(R.id.radioGroupRating)
+        val tvRating = findViewById<TextView>(R.id.tvRating)
+        var chosen = "good normal bad"
 
 
         switchDarkMode.setOnCheckedChangeListener{ _, isChecked ->
@@ -57,5 +61,14 @@ class MainActivity : AppCompatActivity() {
         cbReading.setOnCheckedChangeListener { _, _ -> updateHobbiesText() }
         cbSports.setOnCheckedChangeListener { _, _ -> updateHobbiesText() }
         cbMusic.setOnCheckedChangeListener { _, _ -> updateHobbiesText() }
+
+        radioGroupRating.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.rdGood -> chosen = "Хорошо"
+                R.id.rdNormal -> chosen = "Нормально"
+                R.id.rdBad -> chosen = "Плохо"
+            }
+            tvRating.text = "Вы выбрали: ${chosen}"
+        }
     }
 }
