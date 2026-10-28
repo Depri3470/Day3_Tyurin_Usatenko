@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Day3_Tyurin_Usatenko</string>
+    <string name="photo_description">A beautiful dog</string>
+    <string name="darkMode">Dark theme</string>
 </resources>
