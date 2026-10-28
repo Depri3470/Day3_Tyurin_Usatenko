@@ -2,6 +2,7 @@ package com.depri.day3_tyurin_usatenko
 
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.CheckBox
 import android.widget.Switch
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         val switchDarkMode = findViewById<Switch>(R.id.darkThemeSwitch)
         val mainLayout = findViewById<ConstraintLayout>(R.id.main)
+        val cbReading = findViewById<CheckBox>(R.id.cbReading)
+        val cbSports = findViewById<CheckBox>(R.id.cbSports)
+        val cbMusic = findViewById<CheckBox>(R.id.cbMusic)
+        val userHobbies = findViewById<TextView>(R.id.userHobbies)
+
 
         switchDarkMode.setOnCheckedChangeListener{ _, isChecked ->
             if (isChecked) {
@@ -32,6 +38,24 @@ class MainActivity : AppCompatActivity() {
                 mainLayout.setBackgroundColor(Color.WHITE)
                 findViewById<TextView>(R.id.tvDescription).setTextColor(Color.BLACK)
             }
+        }
+
+        fun updateHobbiesText() {
+            val hobbies = mutableListOf<String>()
+
+            if (cbReading.isChecked) hobbies.add("Чтение")
+            if (cbSports.isChecked) hobbies.add("Спорт")
+            if (cbMusic.isChecked) hobbies.add("Музыка")
+
+            if (hobbies.isEmpty()) {
+                userHobbies.text = "Выберите ваши увлечения"
+            } else {
+                userHobbies.text = "Ваши увлечения: ${hobbies.joinToString(", ")}"
             }
         }
+
+        cbReading.setOnCheckedChangeListener { _, _ -> updateHobbiesText() }
+        cbSports.setOnCheckedChangeListener { _, _ -> updateHobbiesText() }
+        cbMusic.setOnCheckedChangeListener { _, _ -> updateHobbiesText() }
+    }
 }
